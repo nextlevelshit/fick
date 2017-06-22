@@ -5,6 +5,12 @@
   "main": "index.js",
   "repository": "https://github.com/nextlevelshit/fick",
   "license": "GPL v2",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "bin": {
+    "fick": "./bin/fick.js"
+  },
   "dependencies": {
     "chalk": "^1.1.3",
     "clear": "^0.0.1",
