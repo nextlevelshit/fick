@@ -1,0 +1,18 @@
+{
+  "name": "fick",
+  "version": "0.0.0",
+  "description": "Adding CLI to every possible website. High frequently updated websitescan be grabbed and structured inside your terminal.",
+  "main": "index.js",
+  "repository": "https://github.com/nextlevelshit/fick",
+  "license": "GPL v2",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "clear": "^0.0.1",
+    "clui": "^0.3.6",
+    "figlet": "^1.2.0",
+    "inquirer": "^3.1.1",
+    "lodash": "^4.17.4",
+    "minimist": "^1.2.0",
+    "preferences": "^0.2.1"
+  }
+}
