@@ -1,18 +1,15 @@
 'use strict';
-
+// External libraries
 const chalk = require('chalk');
-const clear = require('clear');
-const CLI = require('clui');
 const inquirer = require('inquirer');
 const _ = require('lodash');
-const Preferences = require('preferences');
 const request = require('request');
-
-const results = require('./src/results');
+// Source files included
 const crawl = require('./src/crawl');
+const header = require('./src/header');
+const results = require('./src/results');
 
 const argv = require('minimist')(process.argv.slice(2));
-const stream = console.log;
 
 var menu = [
   {
@@ -24,20 +21,9 @@ var menu = [
   }
 ];
 
-var cities = [
-  {
-    type: 'list',
-    name: 'city',
-    message: 'Choose city:',
-    choices: [
-      'Stuttgart',
-      'Ludwigsburg',
-      'Esslingen'
-    ]
-  }
-];
-
 function start(city) {
+
+  header();
 
   city = (typeof city !== 'undefined') ? city : 'Stuttgart';
 
@@ -47,18 +33,21 @@ function start(city) {
     'Esslingen': 'http://www.wg-gesucht.de/wg-zimmer-in-Esslingen-am-Neckar.37.0.1.0.html?offer_filter=1&category=0&country_code=de&city_name=Esslingen+am+Neckar&city_id=37&rent_type=2'
   };
 
+  var cities = [
+    {
+      type: 'list',
+      name: 'city',
+      message: 'Choose city:',
+      choices: _.keysIn(urls)
+    }
+  ];
+
   var options = {
     url: urls[city],
     headers: {
       'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/58.0.3029.110 Chrome/58.0.3029.110 Safari/537.36'
     }
-  }
-
-  clear();
-
-  stream(chalk.bold.bgCyan('        '));
-  stream(chalk.bold.bgCyan('  FICK  '), chalk.italic('fucking incredible code knockout'));
-  stream(chalk.bold.bgCyan('        \n\r'));
+  };
 
   request(options, function (error, response, html) {
     if (!error && response.statusCode == 200) {
@@ -67,10 +56,15 @@ function start(city) {
       inquirer.prompt(menu).then(function(answers) {
         if (answers.next === 'Refresh') {
           start();
+
         } else if(answers.next === 'Change city') {
           inquirer.prompt(cities).then(function(answers) {
             start(answers.city);
           });
+
+        } else if(answers.next === 'Exit') {
+          process.exit();
+
         }
       });
     }
