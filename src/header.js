@@ -7,9 +7,9 @@ const stream = console.log;
 // Export
 module.exports = header;
 // Constructor
-function header() {
+function header(city) {
   clear();
   stream(chalk.bold.bgCyan('        '));
-  stream(chalk.bold.bgCyan('  FICK  '), chalk.italic('fucking incredible code knockout'));
-  stream(chalk.bold.bgCyan('        \n\r'));
+  stream(chalk.bold.bgCyan('  FICK  '), chalk.bold.cyan(` wg-gesucht.de » ${city}`));
+  stream(chalk.bold.bgCyan('        \r\n'));
 }

@@ -16,6 +16,8 @@ function start(city) {
 
   var conf = config(city);
 
+  header(city);
+
   request(conf.options, function (error, response, html) {
     if (!error && response.statusCode == 200) {
       results.show(crawl.list(html), 5);
