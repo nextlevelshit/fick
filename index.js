@@ -46,14 +46,19 @@ function start() {
     }
   }
 
+  clear();
+
+  stream(chalk.bold.bgCyan('        '));
+  stream(chalk.bold.bgCyan('  FICK  '), chalk.italic('fucking incredible code knockout'));
+  stream(chalk.bold.bgCyan('        \n\r'));
+
   request(options, function (error, response, html) {
     if (!error && response.statusCode == 200) {
-      results.show(crawl.list(html));
+      results.show(crawl.list(html), 5);
 
       inquirer.prompt(menu).then(function(answers) {
         if (answers.next === 'Refresh') {
           start();
-
         } else if(answers.next === 'Change city') {
           inquirer.prompt(cities).then(function(answers) {
             stream(chalk.bold('Changing city to', answers.city));
