@@ -37,10 +37,18 @@ var cities = [
   }
 ];
 
-function start() {
+function start(city) {
+
+  city = (typeof city !== 'undefined') ? city : 'Stuttgart';
+
+  var urls = {
+    'Stuttgart': 'http://www.wg-gesucht.de/wg-zimmer-in-Stuttgart.124.0.1.0.html?offer_filter=1&category=0&city_id=124&rent_type=2',
+    'Ludwigsburg': 'http://www.wg-gesucht.de/wg-zimmer-in-Ludwigsburg.79.0.1.0.html?offer_filter=1&category=0&country_code=de&city_name=Ludwigsburg&city_id=79&rent_type=2',
+    'Esslingen': 'http://www.wg-gesucht.de/wg-zimmer-in-Esslingen-am-Neckar.37.0.1.0.html?offer_filter=1&category=0&country_code=de&city_name=Esslingen+am+Neckar&city_id=37&rent_type=2'
+  };
 
   var options = {
-    url: 'http://www.wg-gesucht.de/wg-zimmer-in-Stuttgart.124.0.1.0.html?offer_filter=1&category=0&city_id=124&rent_type=2',
+    url: urls[city],
     headers: {
       'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/58.0.3029.110 Chrome/58.0.3029.110 Safari/537.36'
     }
@@ -61,7 +69,7 @@ function start() {
           start();
         } else if(answers.next === 'Change city') {
           inquirer.prompt(cities).then(function(answers) {
-            stream(chalk.bold('Changing city to', answers.city));
+            start(answers.city);
           });
         }
       });
