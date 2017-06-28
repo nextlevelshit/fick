@@ -12,11 +12,9 @@ const results = require('./src/results');
 const argv = require('minimist')(process.argv.slice(2));
 
 function start(city) {
-  city = (typeof city !== 'undefined') ? city : 'Stuttgart';
+  city = (typeof city !== 'undefined') ? city : (argv._[0]) ? argv._[0] : 'Stuttgart';
 
   var conf = config(city);
-
-  header();
 
   request(conf.options, function (error, response, html) {
     if (!error && response.statusCode == 200) {
@@ -37,7 +35,7 @@ function start(city) {
         }
       });
     } else {
-      console.log(chalk.bold('ERROR: No network connection, please try again.'));
+      console.log(chalk.bold('ERROR: Something went wrong, please try again.'));
     }
   })
 };
