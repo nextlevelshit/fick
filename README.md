@@ -3,7 +3,7 @@
 
 ![crown_logo](https://user-images.githubusercontent.com/10194510/27681846-c9e86654-5cc0-11e7-8aca-b63739fbc398.png)
 
-```
+```bash
 FICK is highly under development and is for now only available for www.wg-gesucht.de. Checkout the roadmap and feel free to contribute.
 ```
 
@@ -19,19 +19,19 @@ Both are required to use `FICK`. *node.js* is the so to speak paradigma for serv
 
 ## Installation
 
-```
+```bash
 [sudo] yarn global add fick // use sudo only, if you recieve a permission error
 ```
 
 You can also use *npm* for installation, if *yarn* is not installed yet:
 
-```
+```bash
 [sudo] npm install -g fick // use sudo only, if you recieve a permission error
 ```
 
 ## Usage
 
-```
+```bash
 fick [Stuttgart|Ludwigsburg|Esslingen] // parameters are contingent
 ```
 
@@ -39,7 +39,7 @@ fick [Stuttgart|Ludwigsburg|Esslingen] // parameters are contingent
 
 Fork that repository, install dependencies with *yarn* or *npm* and use the following commands to test functionality:
 
-```
+```bash
 yarn test // run jest test suite and watch file change
 yarn start // run FICK main module
 ```
