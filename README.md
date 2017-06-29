@@ -35,6 +35,12 @@ You can also use *npm* for installation, if *yarn* is not installed yet:
 fick [Stuttgart|Ludwigsburg|Esslingen] # parameters are contingent
 ```
 
+## Screenshot
+
+![fick-screenshot](https://user-images.githubusercontent.com/10194510/27683571-b83c28ae-5cc6-11e7-8137-693708afaf34.png)
+
+There will be an output of (for now) maximum 5 lines of information. At the bottom there is an menu for refreshing the results or changing the target city for crawling information.
+
 ## Contribution
 
 Fork that repository, install dependencies with *yarn* or *npm* and use the following commands to test functionality:
