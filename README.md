@@ -3,9 +3,9 @@
 
 ![crown_logo](https://user-images.githubusercontent.com/10194510/27681846-c9e86654-5cc0-11e7-8aca-b63739fbc398.png)
 
-```bash
-FICK is highly under development and is for now only available for www.wg-gesucht.de. Checkout the roadmap and feel free to contribute.
-```
+
+> FICK is highly under development and is for now only available for www.wg-gesucht.de. Checkout the roadmap and feel free to contribute.
+
 
 ## Pre-requirements
 
