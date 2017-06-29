@@ -20,19 +20,19 @@ Both are required to use `FICK`. *node.js* is the so to speak paradigma for serv
 ## Installation
 
 ```bash
-[sudo] yarn global add fick // use sudo only, if you recieve a permission error
+[sudo] yarn global add fick # use sudo only, if you recieve a permission error
 ```
 
 You can also use *npm* for installation, if *yarn* is not installed yet:
 
 ```bash
-[sudo] npm install -g fick // use sudo only, if you recieve a permission error
+[sudo] npm install -g fick # use sudo only, if you recieve a permission error
 ```
 
 ## Usage
 
 ```bash
-fick [Stuttgart|Ludwigsburg|Esslingen] // parameters are contingent
+fick [Stuttgart|Ludwigsburg|Esslingen] # parameters are contingent
 ```
 
 ## Contribution
@@ -40,8 +40,8 @@ fick [Stuttgart|Ludwigsburg|Esslingen] // parameters are contingent
 Fork that repository, install dependencies with *yarn* or *npm* and use the following commands to test functionality:
 
 ```bash
-yarn test // run jest test suite and watch file change
-yarn start // run FICK main module
+yarn test # run jest test suite and watch file change
+yarn start # run FICK main module
 ```
 Please stick to semver versioning. Add an issue and add a merge request on GitHub.
 
