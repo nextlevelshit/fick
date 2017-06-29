@@ -4,7 +4,7 @@
   "description": "Adding CLI to every possible website. High frequently updated websitescan be grabbed and structured inside your terminal.",
   "main": "index.js",
   "repository": "https://github.com/nextlevelshit/fick",
-  "license": "GPL v2",
+  "license": "GPL-2.0",
   "scripts": {
     "start": "node ./index.js",
     "test": "jest --watchAll"
